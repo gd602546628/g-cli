@@ -8,8 +8,16 @@ program.version(pkg.version)
 program
     .command('create <name> [type]')
     .description('创建一个新的项目')
-    .action((name,type)=>{
-        create(name,type)
+    .action((name, type) => {
+        create(name, type)
+    })
+
+
+program
+    .command('start [rd]')
+    .description('启动开发服务器')
+    .action((rd) => {
+        const isRd = rd === 'rd'
     })
 
 program.parse(process.argv)
